@@ -3,7 +3,7 @@ var dt = require('./mydatemodule');
 var db = require('./db_config');
 var MongoClient = require('mongodb').MongoClient;
 // var url = "mongodb://localhost:27017/mydb";
-var url = "mongodb+srv://root:root@clusterstream.spqx9.mongodb.net/";
+var url = "mongodb+srv://root:<passowod>@clusterstream.spqx9.mongodb.net/";
 
 // MongoClient.connect(url, function (err, db) {
 //   if (err) throw err;
