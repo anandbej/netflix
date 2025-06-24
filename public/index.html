@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone - Stream Your Favorite Movies & TV Shows</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="logo">
+                    <h1>NETFLIX</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#tv-shows" class="nav-link">TV Shows</a></li>
+                    <li><a href="#movies" class="nav-link">Movies</a></li>
+                    <li><a href="#new" class="nav-link">New & Popular</a></li>
+                    <li><a href="#my-list" class="nav-link">My List</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search...">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="user-menu">
+                    <div class="user-avatar" id="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <div class="dropdown-item" id="profile-link">
+                            <i class="fas fa-user-circle"></i>
+                            <span>Profile</span>
+                        </div>
+                        <div class="dropdown-item" id="account-link">
+                            <i class="fas fa-cog"></i>
+                            <span>Account</span>
+                        </div>
+                        <div class="dropdown-item" id="help-link">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Help Center</span>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-item" id="logout-btn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Sign Out</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-info">
+                <h1 class="hero-title" id="hero-title">Movie Title</h1>
+                <p class="hero-description" id="hero-description">Movie description goes here...</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-play" id="play-btn">
+                        <i class="fas fa-play"></i>
+                        Play
+                    </button>
+                    <button class="btn btn-more" id="more-info-btn">
+                        <i class="fas fa-info-circle"></i>
+                        More Info
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Content Sections -->
+    <main class="main-content">
+        <!-- Featured Section -->
+        <section class="content-section" id="featured-section">
+            <h2 class="section-title">Featured</h2>
+            <div class="content-row" id="featured-content">
+                <!-- Content cards will be dynamically added here -->
+            </div>
+        </section>
+
+        <!-- Trending Section -->
+        <section class="content-section" id="trending-section">
+            <h2 class="section-title">Trending Now</h2>
+            <div class="content-row" id="trending-content">
+                <!-- Content cards will be dynamically added here -->
+            </div>
+        </section>
+
+        <!-- New Releases Section -->
+        <section class="content-section" id="new-section">
+            <h2 class="section-title">New Releases</h2>
+            <div class="content-row" id="new-content">
+                <!-- Content cards will be dynamically added here -->
+            </div>
+        </section>
+
+        <!-- Recommendations Section -->
+        <section class="content-section" id="recommendations-section">
+            <h2 class="section-title">Recommended for You</h2>
+            <div class="content-row" id="recommendations-content">
+                <!-- Content cards will be dynamically added here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Video Player Modal -->
+    <div class="modal" id="video-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Video Title</h3>
+                <button class="close-btn" id="close-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <video id="video-player" controls>
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Details Modal -->
+    <div class="modal" id="details-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="details-title">Content Title</h3>
+                <button class="close-btn" id="close-details">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="content-details">
+                    <div class="content-poster">
+                        <img id="details-poster" src="" alt="Content Poster">
+                    </div>
+                    <div class="content-info">
+                        <div class="content-meta">
+                            <span id="details-year">2023</span>
+                            <span id="details-rating">TV-MA</span>
+                            <span id="details-duration">2h 15m</span>
+                        </div>
+                        <p id="details-description">Content description...</p>
+                        <div class="content-cast">
+                            <strong>Cast:</strong> <span id="details-cast">Cast members...</span>
+                        </div>
+                        <div class="content-genres">
+                            <strong>Genres:</strong> <span id="details-genres">Action, Drama...</span>
+                        </div>
+                        <div class="content-actions">
+                            <button class="btn btn-play" id="details-play-btn">
+                                <i class="fas fa-play"></i>
+                                Play
+                            </button>
+                            <button class="btn btn-add" id="add-to-list-btn">
+                                <i class="fas fa-plus"></i>
+                                My List
+                            </button>
+                            <button class="btn btn-rate" id="rate-btn">
+                                <i class="fas fa-star"></i>
+                                Rate
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div class="modal" id="auth-modal">
+        <div class="modal-content auth-modal">
+            <div class="modal-header">
+                <h3 id="auth-title">Sign In</h3>
+                <button class="close-btn" id="close-auth">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="auth-form">
+                    <div class="form-group">
+                        <input type="email" id="auth-email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="auth-password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="auth-submit">Sign In</button>
+                </form>
+                <div class="auth-switch">
+                    <p id="auth-switch-text">New to Netflix?</p>
+                    <button id="auth-switch-btn">Sign up now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" id="loading-spinner">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html> 
